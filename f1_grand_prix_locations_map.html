@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_95ee685db386f5555ecaffdad8f655a1 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+<div style="
+    position: fixed;
+    top: 20px;
+    left: 50px;
+    z-index: 9999;
+    background-color: white;
+    padding: 12px 18px;
+    border: 2px solid #e10600;
+    border-radius: 6px;
+    font-family: Arial;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.25);
+">
+    <h3 style="margin: 0; color: #e10600;">🏁 Formula 1 Grand Prix Locations</h3>
+    <p style="margin: 4px 0 0 0; font-size: 13px;">
+        Circuit locations by region
+    </p>
+</div>
+    
+<div style="
+    position: fixed;
+    bottom: 40px;
+    left: 50px;
+    z-index: 9999;
+    background-color: white;
+    padding: 12px 16px;
+    border: 2px solid #333;
+    border-radius: 6px;
+    font-family: Arial;
+    font-size: 13px;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.25);
+">
+    <b>Region Legend</b><br>
+    <span style="color: blue;">●</span> Europe<br>
+    <span style="color: red;">●</span> Americas<br>
+    <span style="color: orange;">●</span> Asia / Middle East<br>
+    <span style="color: green;">●</span> Oceania<br>
+</div>
+    
+            <div class="folium-map" id="map_95ee685db386f5555ecaffdad8f655a1" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_95ee685db386f5555ecaffdad8f655a1 = L.map(
+                "map_95ee685db386f5555ecaffdad8f655a1",
+                {
+                    center: [20.0, 0.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_46c19aa3bc6108648164a595d2c26f2d = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_46c19aa3bc6108648164a595d2c26f2d.addTo(map_95ee685db386f5555ecaffdad8f655a1);
+        
+    
+            var marker_cluster_18b1e887a21a6969a1b2b214dea12b05 = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_606556f03a6a8e3ca56a3691e4c97807 = L.marker(
+                [45.5, -73.5228],
+                {
+}
+            ).addTo(marker_cluster_18b1e887a21a6969a1b2b214dea12b05);
+        
+    
+            var icon_988eb8bd7564c0d0ed9dbec648b4ce6d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag-checkered",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8b70668cb1dcbf08b4b14a733adbae42 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_74d9a05077ec79c9e286e92e582a8521 = $(`<div id="html_74d9a05077ec79c9e286e92e582a8521" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 230px;">         <h4 style="margin-bottom: 6px; color: #e10600;">🏎️ Canadian Grand Prix</h4>         <b>Circuit:</b> Circuit Gilles Villeneuve<br>         <b>Country:</b> Canada<br>         <b>Region:</b> Americas<br>         <b>Track type:</b> Permanent / street-style     </div>     </div>`)[0];
+                popup_8b70668cb1dcbf08b4b14a733adbae42.setContent(html_74d9a05077ec79c9e286e92e582a8521);
+            
+        
+
+        marker_606556f03a6a8e3ca56a3691e4c97807.bindPopup(popup_8b70668cb1dcbf08b4b14a733adbae42)
+        ;
+
+        
+    
+    
+            marker_606556f03a6a8e3ca56a3691e4c97807.bindTooltip(
+                `<div>
+                     Canadian Grand Prix — Circuit Gilles Villeneuve
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_606556f03a6a8e3ca56a3691e4c97807.setIcon(icon_988eb8bd7564c0d0ed9dbec648b4ce6d);
+            
+    
+            var marker_04d5d643340aff898f147a4fbd1ce089 = L.marker(
+                [52.3888, 4.5409],
+                {
+}
+            ).addTo(marker_cluster_18b1e887a21a6969a1b2b214dea12b05);
+        
+    
+            var icon_72a4e51e0b22067a7cd93443ac5f1055 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "flag-checkered",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9c71a316af40e148be35de56b39f608b = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_2d50f4a8f8aa318c94970f3533481d83 = $(`<div id="html_2d50f4a8f8aa318c94970f3533481d83" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 230px;">         <h4 style="margin-bottom: 6px; color: #e10600;">🏎️ Dutch Grand Prix</h4>         <b>Circuit:</b> Circuit Zandvoort<br>         <b>Country:</b> Netherlands<br>         <b>Region:</b> Europe<br>         <b>Track type:</b> Permanent     </div>     </div>`)[0];
+                popup_9c71a316af40e148be35de56b39f608b.setContent(html_2d50f4a8f8aa318c94970f3533481d83);
+            
+        
+
+        marker_04d5d643340aff898f147a4fbd1ce089.bindPopup(popup_9c71a316af40e148be35de56b39f608b)
+        ;
+
+        
+    
+    
+            marker_04d5d643340aff898f147a4fbd1ce089.bindTooltip(
+                `<div>
+                     Dutch Grand Prix — Circuit Zandvoort
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_04d5d643340aff898f147a4fbd1ce089.setIcon(icon_72a4e51e0b22067a7cd93443ac5f1055);
+            
+    
+            var marker_6acdd70e5265939bc48e3cfca2d1ae95 = L.marker(
+                [47.2197, 14.7647],
+                {
+}
+            ).addTo(marker_cluster_18b1e887a21a6969a1b2b214dea12b05);
+        
+    
+            var icon_ea38c61f91216b7e956d0e436bfaea2a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "flag-checkered",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b7594e585d421411e087fb4c5a6764f7 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_30a8f898b556cf6670df8bc36a0feedf = $(`<div id="html_30a8f898b556cf6670df8bc36a0feedf" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 230px;">         <h4 style="margin-bottom: 6px; color: #e10600;">🏎️ Austrian Grand Prix</h4>         <b>Circuit:</b> Red Bull Ring<br>         <b>Country:</b> Austria<br>         <b>Region:</b> Europe<br>         <b>Track type:</b> Permanent     </div>     </div>`)[0];
+                popup_b7594e585d421411e087fb4c5a6764f7.setContent(html_30a8f898b556cf6670df8bc36a0feedf);
+            
+        
+
+        marker_6acdd70e5265939bc48e3cfca2d1ae95.bindPopup(popup_b7594e585d421411e087fb4c5a6764f7)
+        ;
+
+        
+    
+    
+            marker_6acdd70e5265939bc48e3cfca2d1ae95.bindTooltip(
+                `<div>
+                     Austrian Grand Prix — Red Bull Ring
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6acdd70e5265939bc48e3cfca2d1ae95.setIcon(icon_ea38c61f91216b7e956d0e436bfaea2a);
+            
+    
+            var marker_04d95fda6a30d3a0cb875a5c510925b4 = L.marker(
+                [40.3725, 49.8533],
+                {
+}
+            ).addTo(marker_cluster_18b1e887a21a6969a1b2b214dea12b05);
+        
+    
+            var icon_7a1b3c76364538317da066946a6099e3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "flag-checkered",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e9e0ab0834161f85ddf3890969b6073c = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_340d6086f62e80b661ca52850ed62822 = $(`<div id="html_340d6086f62e80b661ca52850ed62822" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 230px;">         <h4 style="margin-bottom: 6px; color: #e10600;">🏎️ Azerbaijan Grand Prix</h4>         <b>Circuit:</b> Baku City Circuit<br>         <b>Country:</b> Azerbaijan<br>         <b>Region:</b> Asia / Middle East<br>         <b>Track type:</b> Street     </div>     </div>`)[0];
+                popup_e9e0ab0834161f85ddf3890969b6073c.setContent(html_340d6086f62e80b661ca52850ed62822);
+            
+        
+
+        marker_04d95fda6a30d3a0cb875a5c510925b4.bindPopup(popup_e9e0ab0834161f85ddf3890969b6073c)
+        ;
+
+        
+    
+    
+            marker_04d95fda6a30d3a0cb875a5c510925b4.bindTooltip(
+                `<div>
+                     Azerbaijan Grand Prix — Baku City Circuit
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_04d95fda6a30d3a0cb875a5c510925b4.setIcon(icon_7a1b3c76364538317da066946a6099e3);
+            
+    
+            var marker_7e014aab0cfe4fb3c4bcfe1f36de7450 = L.marker(
+                [21.6319, 39.1044],
+                {
+}
+            ).addTo(marker_cluster_18b1e887a21a6969a1b2b214dea12b05);
+        
+    
+            var icon_18c67101770c24431fa89b5bf8f6bd87 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "flag-checkered",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b7ea59fc5ac38f02d0f86f230b0fac51 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_cb13a0907475256aa36e10557da08bd6 = $(`<div id="html_cb13a0907475256aa36e10557da08bd6" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 230px;">         <h4 style="margin-bottom: 6px; color: #e10600;">🏎️ Saudi Arabian Grand Prix</h4>         <b>Circuit:</b> Jeddah Corniche Circuit<br>         <b>Country:</b> Saudi Arabia<br>         <b>Region:</b> Asia / Middle East<br>         <b>Track type:</b> Street     </div>     </div>`)[0];
+                popup_b7ea59fc5ac38f02d0f86f230b0fac51.setContent(html_cb13a0907475256aa36e10557da08bd6);
+            
+        
+
+        marker_7e014aab0cfe4fb3c4bcfe1f36de7450.bindPopup(popup_b7ea59fc5ac38f02d0f86f230b0fac51)
+        ;
+
+        
+    
+    
+            marker_7e014aab0cfe4fb3c4bcfe1f36de7450.bindTooltip(
+                `<div>
+                     Saudi Arabian Grand Prix — Jeddah Corniche Circuit
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7e014aab0cfe4fb3c4bcfe1f36de7450.setIcon(icon_18c67101770c24431fa89b5bf8f6bd87);
+            
+    
+            var marker_0be5562f8f6ead75b32ea066fc01c036 = L.marker(
+                [50.4372, 5.9714],
+                {
+}
+            ).addTo(marker_cluster_18b1e887a21a6969a1b2b214dea12b05);
+        
+    
+            var icon_7e3aaeecf0bc1d994c35546f652393d7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "flag-checkered",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_41701f5c33680729fdac2565a18a9c10 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_c9a3032c230b2991acbb8b1bc4f23360 = $(`<div id="html_c9a3032c230b2991acbb8b1bc4f23360" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 230px;">         <h4 style="margin-bottom: 6px; color: #e10600;">🏎️ Belgian Grand Prix</h4>         <b>Circuit:</b> Circuit de Spa-Francorchamps<br>         <b>Country:</b> Belgium<br>         <b>Region:</b> Europe<br>         <b>Track type:</b> Permanent     </div>     </div>`)[0];
+                popup_41701f5c33680729fdac2565a18a9c10.setContent(html_c9a3032c230b2991acbb8b1bc4f23360);
+            
+        
+
+        marker_0be5562f8f6ead75b32ea066fc01c036.bindPopup(popup_41701f5c33680729fdac2565a18a9c10)
+        ;
+
+        
+    
+    
+            marker_0be5562f8f6ead75b32ea066fc01c036.bindTooltip(
+                `<div>
+                     Belgian Grand Prix — Circuit de Spa-Francorchamps
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0be5562f8f6ead75b32ea066fc01c036.setIcon(icon_7e3aaeecf0bc1d994c35546f652393d7);
+            
+    
+            var marker_9ad786d237df48d2b25e4c503b3377e2 = L.marker(
+                [30.1328, -97.6411],
+                {
+}
+            ).addTo(marker_cluster_18b1e887a21a6969a1b2b214dea12b05);
+        
+    
+            var icon_a8ff289494797c914df4de3d53cdd7d1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag-checkered",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5c2e104ba6cbc34bc1d243410388e5cf = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_282038b0afb58655864875a329d175e8 = $(`<div id="html_282038b0afb58655864875a329d175e8" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 230px;">         <h4 style="margin-bottom: 6px; color: #e10600;">🏎️ United States Grand Prix</h4>         <b>Circuit:</b> Circuit of the Americas<br>         <b>Country:</b> United States<br>         <b>Region:</b> Americas<br>         <b>Track type:</b> Permanent     </div>     </div>`)[0];
+                popup_5c2e104ba6cbc34bc1d243410388e5cf.setContent(html_282038b0afb58655864875a329d175e8);
+            
+        
+
+        marker_9ad786d237df48d2b25e4c503b3377e2.bindPopup(popup_5c2e104ba6cbc34bc1d243410388e5cf)
+        ;
+
+        
+    
+    
+            marker_9ad786d237df48d2b25e4c503b3377e2.bindTooltip(
+                `<div>
+                     United States Grand Prix — Circuit of the Americas
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9ad786d237df48d2b25e4c503b3377e2.setIcon(icon_a8ff289494797c914df4de3d53cdd7d1);
+            
+    
+            var marker_b338c617c87162f77ac89438c29ac528 = L.marker(
+                [45.6156, 9.2811],
+                {
+}
+            ).addTo(marker_cluster_18b1e887a21a6969a1b2b214dea12b05);
+        
+    
+            var icon_93acbbadc3d7b0173d0efa92697f7e91 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "flag-checkered",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_749aa36c91e64f7f276481b53ff8060c = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_8272168e1e74744cb34d027cea234f0f = $(`<div id="html_8272168e1e74744cb34d027cea234f0f" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 230px;">         <h4 style="margin-bottom: 6px; color: #e10600;">🏎️ Italian Grand Prix</h4>         <b>Circuit:</b> Autodromo Nazionale Monza<br>         <b>Country:</b> Italy<br>         <b>Region:</b> Europe<br>         <b>Track type:</b> Permanent     </div>     </div>`)[0];
+                popup_749aa36c91e64f7f276481b53ff8060c.setContent(html_8272168e1e74744cb34d027cea234f0f);
+            
+        
+
+        marker_b338c617c87162f77ac89438c29ac528.bindPopup(popup_749aa36c91e64f7f276481b53ff8060c)
+        ;
+
+        
+    
+    
+            marker_b338c617c87162f77ac89438c29ac528.bindTooltip(
+                `<div>
+                     Italian Grand Prix — Autodromo Nazionale Monza
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b338c617c87162f77ac89438c29ac528.setIcon(icon_93acbbadc3d7b0173d0efa92697f7e91);
+            
+    
+            var marker_8bceecb4a1ce983a1600879d1653bb20 = L.marker(
+                [47.5822, 19.2511],
+                {
+}
+            ).addTo(marker_cluster_18b1e887a21a6969a1b2b214dea12b05);
+        
+    
+            var icon_eba20cf4a4f874e7e9a71fd1341a5621 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "flag-checkered",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5953b2a88c85484cbead8a8071fd5c26 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_c17a6e3e479ed03fa949df14916ca13c = $(`<div id="html_c17a6e3e479ed03fa949df14916ca13c" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 230px;">         <h4 style="margin-bottom: 6px; color: #e10600;">🏎️ Hungarian Grand Prix</h4>         <b>Circuit:</b> Hungaroring<br>         <b>Country:</b> Hungary<br>         <b>Region:</b> Europe<br>         <b>Track type:</b> Permanent     </div>     </div>`)[0];
+                popup_5953b2a88c85484cbead8a8071fd5c26.setContent(html_c17a6e3e479ed03fa949df14916ca13c);
+            
+        
+
+        marker_8bceecb4a1ce983a1600879d1653bb20.bindPopup(popup_5953b2a88c85484cbead8a8071fd5c26)
+        ;
+
+        
+    
+    
+            marker_8bceecb4a1ce983a1600879d1653bb20.bindTooltip(
+                `<div>
+                     Hungarian Grand Prix — Hungaroring
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8bceecb4a1ce983a1600879d1653bb20.setIcon(icon_eba20cf4a4f874e7e9a71fd1341a5621);
+            
+    
+            var marker_a145f2126c2ba23a080039851e789e93 = L.marker(
+                [34.8431, 136.541],
+                {
+}
+            ).addTo(marker_cluster_18b1e887a21a6969a1b2b214dea12b05);
+        
+    
+            var icon_3b3a36abeb61fad71d8b72a8d49d05ee = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "flag-checkered",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_83243681b040644f91116d4f473cbc69 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_652d8873218b8f1a5ba11bd74a1282b6 = $(`<div id="html_652d8873218b8f1a5ba11bd74a1282b6" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 230px;">         <h4 style="margin-bottom: 6px; color: #e10600;">🏎️ Japanese Grand Prix</h4>         <b>Circuit:</b> Suzuka Circuit<br>         <b>Country:</b> Japan<br>         <b>Region:</b> Asia / Middle East<br>         <b>Track type:</b> Permanent     </div>     </div>`)[0];
+                popup_83243681b040644f91116d4f473cbc69.setContent(html_652d8873218b8f1a5ba11bd74a1282b6);
+            
+        
+
+        marker_a145f2126c2ba23a080039851e789e93.bindPopup(popup_83243681b040644f91116d4f473cbc69)
+        ;
+
+        
+    
+    
+            marker_a145f2126c2ba23a080039851e789e93.bindTooltip(
+                `<div>
+                     Japanese Grand Prix — Suzuka Circuit
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a145f2126c2ba23a080039851e789e93.setIcon(icon_3b3a36abeb61fad71d8b72a8d49d05ee);
+            
+    
+            var marker_28ec4514284a4bbd8c0c8e91ff291ce0 = L.marker(
+                [-23.7036, -46.6997],
+                {
+}
+            ).addTo(marker_cluster_18b1e887a21a6969a1b2b214dea12b05);
+        
+    
+            var icon_7a4a7d8634e5eb8513767436eb3ed81b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag-checkered",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d550d2e98dae74be7e614d611c38eb75 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_9fdf758cb55208966f8b9fb0374e4610 = $(`<div id="html_9fdf758cb55208966f8b9fb0374e4610" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 230px;">         <h4 style="margin-bottom: 6px; color: #e10600;">🏎️ São Paulo Grand Prix</h4>         <b>Circuit:</b> Interlagos<br>         <b>Country:</b> Brazil<br>         <b>Region:</b> Americas<br>         <b>Track type:</b> Permanent     </div>     </div>`)[0];
+                popup_d550d2e98dae74be7e614d611c38eb75.setContent(html_9fdf758cb55208966f8b9fb0374e4610);
+            
+        
+
+        marker_28ec4514284a4bbd8c0c8e91ff291ce0.bindPopup(popup_d550d2e98dae74be7e614d611c38eb75)
+        ;
+
+        
+    
+    
+            marker_28ec4514284a4bbd8c0c8e91ff291ce0.bindTooltip(
+                `<div>
+                     São Paulo Grand Prix — Interlagos
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_28ec4514284a4bbd8c0c8e91ff291ce0.setIcon(icon_7a4a7d8634e5eb8513767436eb3ed81b);
+            
+    
+            var marker_33605918efb94f6649eb01402c056c4e = L.marker(
+                [26.0325, 50.5106],
+                {
+}
+            ).addTo(marker_cluster_18b1e887a21a6969a1b2b214dea12b05);
+        
+    
+            var icon_34cc3b4f998c19b20aacc9e302eb6e44 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "flag-checkered",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bb2d5bf341a5433910be0aae50f32b6a = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_f8dfefee9cb4813a3b47430540b41659 = $(`<div id="html_f8dfefee9cb4813a3b47430540b41659" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 230px;">         <h4 style="margin-bottom: 6px; color: #e10600;">🏎️ Bahrain Grand Prix</h4>         <b>Circuit:</b> Bahrain International Circuit<br>         <b>Country:</b> Bahrain<br>         <b>Region:</b> Asia / Middle East<br>         <b>Track type:</b> Permanent     </div>     </div>`)[0];
+                popup_bb2d5bf341a5433910be0aae50f32b6a.setContent(html_f8dfefee9cb4813a3b47430540b41659);
+            
+        
+
+        marker_33605918efb94f6649eb01402c056c4e.bindPopup(popup_bb2d5bf341a5433910be0aae50f32b6a)
+        ;
+
+        
+    
+    
+            marker_33605918efb94f6649eb01402c056c4e.bindTooltip(
+                `<div>
+                     Bahrain Grand Prix — Bahrain International Circuit
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_33605918efb94f6649eb01402c056c4e.setIcon(icon_34cc3b4f998c19b20aacc9e302eb6e44);
+            
+    
+            var marker_7dfe3fb9d1f3bb640ce3adebcad208b2 = L.marker(
+                [36.1147, -115.1739],
+                {
+}
+            ).addTo(marker_cluster_18b1e887a21a6969a1b2b214dea12b05);
+        
+    
+            var icon_4e3587d80790cbeb7017f9d29f27d82f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag-checkered",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_22446f3ab4f1e511e88b8373033f4224 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_5705ac6ce939d391de2c7f4bb9b6800a = $(`<div id="html_5705ac6ce939d391de2c7f4bb9b6800a" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 230px;">         <h4 style="margin-bottom: 6px; color: #e10600;">🏎️ Las Vegas Grand Prix</h4>         <b>Circuit:</b> Las Vegas Strip Circuit<br>         <b>Country:</b> United States<br>         <b>Region:</b> Americas<br>         <b>Track type:</b> Street     </div>     </div>`)[0];
+                popup_22446f3ab4f1e511e88b8373033f4224.setContent(html_5705ac6ce939d391de2c7f4bb9b6800a);
+            
+        
+
+        marker_7dfe3fb9d1f3bb640ce3adebcad208b2.bindPopup(popup_22446f3ab4f1e511e88b8373033f4224)
+        ;
+
+        
+    
+    
+            marker_7dfe3fb9d1f3bb640ce3adebcad208b2.bindTooltip(
+                `<div>
+                     Las Vegas Grand Prix — Las Vegas Strip Circuit
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7dfe3fb9d1f3bb640ce3adebcad208b2.setIcon(icon_4e3587d80790cbeb7017f9d29f27d82f);
+            
+    
+            var marker_5e399a181fdf471387542dc36f5d559f = L.marker(
+                [43.7347, 7.4206],
+                {
+}
+            ).addTo(marker_cluster_18b1e887a21a6969a1b2b214dea12b05);
+        
+    
+            var icon_2de961b0bf1d163f6c7b5561734181c9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "flag-checkered",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c8342d2f80e0126091b402e43c9a868f = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_8ec52af225709aad2c7f9378b579d4c6 = $(`<div id="html_8ec52af225709aad2c7f9378b579d4c6" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 230px;">         <h4 style="margin-bottom: 6px; color: #e10600;">🏎️ Monaco Grand Prix</h4>         <b>Circuit:</b> Circuit de Monaco<br>         <b>Country:</b> Monaco<br>         <b>Region:</b> Europe<br>         <b>Track type:</b> Street     </div>     </div>`)[0];
+                popup_c8342d2f80e0126091b402e43c9a868f.setContent(html_8ec52af225709aad2c7f9378b579d4c6);
+            
+        
+
+        marker_5e399a181fdf471387542dc36f5d559f.bindPopup(popup_c8342d2f80e0126091b402e43c9a868f)
+        ;
+
+        
+    
+    
+            marker_5e399a181fdf471387542dc36f5d559f.bindTooltip(
+                `<div>
+                     Monaco Grand Prix — Circuit de Monaco
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5e399a181fdf471387542dc36f5d559f.setIcon(icon_2de961b0bf1d163f6c7b5561734181c9);
+            
+    
+            var marker_c5517c10845011a0747378877f20a91d = L.marker(
+                [52.0733, -1.0147],
+                {
+}
+            ).addTo(marker_cluster_18b1e887a21a6969a1b2b214dea12b05);
+        
+    
+            var icon_a46fb840781c8254cab26de9d830bf30 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "flag-checkered",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3569623e17c2121d92e0c7d98068943f = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_704d0b06d9598bd12c32225b83ec5b0d = $(`<div id="html_704d0b06d9598bd12c32225b83ec5b0d" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 230px;">         <h4 style="margin-bottom: 6px; color: #e10600;">🏎️ British Grand Prix</h4>         <b>Circuit:</b> Silverstone Circuit<br>         <b>Country:</b> United Kingdom<br>         <b>Region:</b> Europe<br>         <b>Track type:</b> Permanent     </div>     </div>`)[0];
+                popup_3569623e17c2121d92e0c7d98068943f.setContent(html_704d0b06d9598bd12c32225b83ec5b0d);
+            
+        
+
+        marker_c5517c10845011a0747378877f20a91d.bindPopup(popup_3569623e17c2121d92e0c7d98068943f)
+        ;
+
+        
+    
+    
+            marker_c5517c10845011a0747378877f20a91d.bindTooltip(
+                `<div>
+                     British Grand Prix — Silverstone Circuit
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c5517c10845011a0747378877f20a91d.setIcon(icon_a46fb840781c8254cab26de9d830bf30);
+            
+    
+            var marker_18888de5f5a83da64b12f23135c8e1b2 = L.marker(
+                [-37.8497, 144.968],
+                {
+}
+            ).addTo(marker_cluster_18b1e887a21a6969a1b2b214dea12b05);
+        
+    
+            var icon_0ad03f642a1934dc469c380576925685 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "flag-checkered",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4f6783d69246bd5c615515daba0b84ae = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_5b34546d0134a962a90fb4a9b54cdb13 = $(`<div id="html_5b34546d0134a962a90fb4a9b54cdb13" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 230px;">         <h4 style="margin-bottom: 6px; color: #e10600;">🏎️ Australian Grand Prix</h4>         <b>Circuit:</b> Albert Park Circuit<br>         <b>Country:</b> Australia<br>         <b>Region:</b> Oceania<br>         <b>Track type:</b> Street / parkland     </div>     </div>`)[0];
+                popup_4f6783d69246bd5c615515daba0b84ae.setContent(html_5b34546d0134a962a90fb4a9b54cdb13);
+            
+        
+
+        marker_18888de5f5a83da64b12f23135c8e1b2.bindPopup(popup_4f6783d69246bd5c615515daba0b84ae)
+        ;
+
+        
+    
+    
+            marker_18888de5f5a83da64b12f23135c8e1b2.bindTooltip(
+                `<div>
+                     Australian Grand Prix — Albert Park Circuit
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_18888de5f5a83da64b12f23135c8e1b2.setIcon(icon_0ad03f642a1934dc469c380576925685);
+            
+    
+            var marker_72d9e471369af9123c664574d5aac884 = L.marker(
+                [41.57, 2.2611],
+                {
+}
+            ).addTo(marker_cluster_18b1e887a21a6969a1b2b214dea12b05);
+        
+    
+            var icon_114dfba59fcda5eac49b8915bed831a9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "flag-checkered",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2b16a8511337649d221c09d488eabd10 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_d429fd95456e3e4d706a8933d748816a = $(`<div id="html_d429fd95456e3e4d706a8933d748816a" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 230px;">         <h4 style="margin-bottom: 6px; color: #e10600;">🏎️ Spanish Grand Prix</h4>         <b>Circuit:</b> Circuit de Barcelona-Catalunya<br>         <b>Country:</b> Spain<br>         <b>Region:</b> Europe<br>         <b>Track type:</b> Permanent     </div>     </div>`)[0];
+                popup_2b16a8511337649d221c09d488eabd10.setContent(html_d429fd95456e3e4d706a8933d748816a);
+            
+        
+
+        marker_72d9e471369af9123c664574d5aac884.bindPopup(popup_2b16a8511337649d221c09d488eabd10)
+        ;
+
+        
+    
+    
+            marker_72d9e471369af9123c664574d5aac884.bindTooltip(
+                `<div>
+                     Spanish Grand Prix — Circuit de Barcelona-Catalunya
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_72d9e471369af9123c664574d5aac884.setIcon(icon_114dfba59fcda5eac49b8915bed831a9);
+            
+    
+            var marker_2a37f68913b0602620882a21d61a05e4 = L.marker(
+                [25.9581, -80.2389],
+                {
+}
+            ).addTo(marker_cluster_18b1e887a21a6969a1b2b214dea12b05);
+        
+    
+            var icon_b01f1a2df5b7ea1d2bade7b36e957819 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag-checkered",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6c6b84eb9554e4af123554557a258c41 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_23a030be79ac0f9f85aa734852dcc9bf = $(`<div id="html_23a030be79ac0f9f85aa734852dcc9bf" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 230px;">         <h4 style="margin-bottom: 6px; color: #e10600;">🏎️ Miami Grand Prix</h4>         <b>Circuit:</b> Miami International Autodrome<br>         <b>Country:</b> United States<br>         <b>Region:</b> Americas<br>         <b>Track type:</b> Temporary     </div>     </div>`)[0];
+                popup_6c6b84eb9554e4af123554557a258c41.setContent(html_23a030be79ac0f9f85aa734852dcc9bf);
+            
+        
+
+        marker_2a37f68913b0602620882a21d61a05e4.bindPopup(popup_6c6b84eb9554e4af123554557a258c41)
+        ;
+
+        
+    
+    
+            marker_2a37f68913b0602620882a21d61a05e4.bindTooltip(
+                `<div>
+                     Miami Grand Prix — Miami International Autodrome
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2a37f68913b0602620882a21d61a05e4.setIcon(icon_b01f1a2df5b7ea1d2bade7b36e957819);
+            
+    
+            var marker_0af956a9cdb1b40cc0d69a5399d6c163 = L.marker(
+                [43.2506, 5.7917],
+                {
+}
+            ).addTo(marker_cluster_18b1e887a21a6969a1b2b214dea12b05);
+        
+    
+            var icon_4a03b00142533a87c2117e882dfcbdc9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "flag-checkered",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1be963b8e154f56e7178b7face99633a = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_3ab629b7b86d1b9fe8b66a9fadb50a59 = $(`<div id="html_3ab629b7b86d1b9fe8b66a9fadb50a59" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 230px;">         <h4 style="margin-bottom: 6px; color: #e10600;">🏎️ French Grand Prix</h4>         <b>Circuit:</b> Circuit Paul Ricard<br>         <b>Country:</b> France<br>         <b>Region:</b> Europe<br>         <b>Track type:</b> Permanent     </div>     </div>`)[0];
+                popup_1be963b8e154f56e7178b7face99633a.setContent(html_3ab629b7b86d1b9fe8b66a9fadb50a59);
+            
+        
+
+        marker_0af956a9cdb1b40cc0d69a5399d6c163.bindPopup(popup_1be963b8e154f56e7178b7face99633a)
+        ;
+
+        
+    
+    
+            marker_0af956a9cdb1b40cc0d69a5399d6c163.bindTooltip(
+                `<div>
+                     French Grand Prix — Circuit Paul Ricard
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0af956a9cdb1b40cc0d69a5399d6c163.setIcon(icon_4a03b00142533a87c2117e882dfcbdc9);
+            
+    
+            var marker_c90be84630ad2f5fee2b644a115a1b20 = L.marker(
+                [24.4672, 54.6031],
+                {
+}
+            ).addTo(marker_cluster_18b1e887a21a6969a1b2b214dea12b05);
+        
+    
+            var icon_f85973c78e8753153e636f3b6c1e4ae1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "flag-checkered",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_895b3546ea090e02d8bc03e658e7518e = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_89381b73223e155c4b13cd33c5bb1212 = $(`<div id="html_89381b73223e155c4b13cd33c5bb1212" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 230px;">         <h4 style="margin-bottom: 6px; color: #e10600;">🏎️ Abu Dhabi Grand Prix</h4>         <b>Circuit:</b> Yas Marina Circuit<br>         <b>Country:</b> United Arab Emirates<br>         <b>Region:</b> Asia / Middle East<br>         <b>Track type:</b> Permanent     </div>     </div>`)[0];
+                popup_895b3546ea090e02d8bc03e658e7518e.setContent(html_89381b73223e155c4b13cd33c5bb1212);
+            
+        
+
+        marker_c90be84630ad2f5fee2b644a115a1b20.bindPopup(popup_895b3546ea090e02d8bc03e658e7518e)
+        ;
+
+        
+    
+    
+            marker_c90be84630ad2f5fee2b644a115a1b20.bindTooltip(
+                `<div>
+                     Abu Dhabi Grand Prix — Yas Marina Circuit
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c90be84630ad2f5fee2b644a115a1b20.setIcon(icon_f85973c78e8753153e636f3b6c1e4ae1);
+            
+    
+            var marker_a67a5c6147e04ef2d3bb3d58eb9066d4 = L.marker(
+                [31.3389, 121.2197],
+                {
+}
+            ).addTo(marker_cluster_18b1e887a21a6969a1b2b214dea12b05);
+        
+    
+            var icon_04407ae53ec82dec7a114f64652f36ba = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "flag-checkered",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ee7cc3afde15a2abb291bbf0926b1b63 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_70ea8cb381fb7f36782c18bcfd9fbb7d = $(`<div id="html_70ea8cb381fb7f36782c18bcfd9fbb7d" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 230px;">         <h4 style="margin-bottom: 6px; color: #e10600;">🏎️ Chinese Grand Prix</h4>         <b>Circuit:</b> Shanghai International Circuit<br>         <b>Country:</b> China<br>         <b>Region:</b> Asia / Middle East<br>         <b>Track type:</b> Permanent     </div>     </div>`)[0];
+                popup_ee7cc3afde15a2abb291bbf0926b1b63.setContent(html_70ea8cb381fb7f36782c18bcfd9fbb7d);
+            
+        
+
+        marker_a67a5c6147e04ef2d3bb3d58eb9066d4.bindPopup(popup_ee7cc3afde15a2abb291bbf0926b1b63)
+        ;
+
+        
+    
+    
+            marker_a67a5c6147e04ef2d3bb3d58eb9066d4.bindTooltip(
+                `<div>
+                     Chinese Grand Prix — Shanghai International Circuit
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a67a5c6147e04ef2d3bb3d58eb9066d4.setIcon(icon_04407ae53ec82dec7a114f64652f36ba);
+            
+    
+            var marker_31624c13681d8c6021b84497e7ba508a = L.marker(
+                [19.4042, -99.0907],
+                {
+}
+            ).addTo(marker_cluster_18b1e887a21a6969a1b2b214dea12b05);
+        
+    
+            var icon_76abb7fca81ae4108890d41e88c4f5bd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag-checkered",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e74eaa5cfc91276495420b30d21dcd78 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_3cf59d9c6c7de6d8f02eb714741fb9ca = $(`<div id="html_3cf59d9c6c7de6d8f02eb714741fb9ca" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 230px;">         <h4 style="margin-bottom: 6px; color: #e10600;">🏎️ Mexico City Grand Prix</h4>         <b>Circuit:</b> Autódromo Hermanos Rodríguez<br>         <b>Country:</b> Mexico<br>         <b>Region:</b> Americas<br>         <b>Track type:</b> Permanent     </div>     </div>`)[0];
+                popup_e74eaa5cfc91276495420b30d21dcd78.setContent(html_3cf59d9c6c7de6d8f02eb714741fb9ca);
+            
+        
+
+        marker_31624c13681d8c6021b84497e7ba508a.bindPopup(popup_e74eaa5cfc91276495420b30d21dcd78)
+        ;
+
+        
+    
+    
+            marker_31624c13681d8c6021b84497e7ba508a.bindTooltip(
+                `<div>
+                     Mexico City Grand Prix — Autódromo Hermanos Rodríguez
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_31624c13681d8c6021b84497e7ba508a.setIcon(icon_76abb7fca81ae4108890d41e88c4f5bd);
+            
+    
+            var marker_f5aeb7d5cfdb8013721af16c330ee5c0 = L.marker(
+                [44.3439, 11.7167],
+                {
+}
+            ).addTo(marker_cluster_18b1e887a21a6969a1b2b214dea12b05);
+        
+    
+            var icon_2492e46e39aa0c4567225f8db1ff11f9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "flag-checkered",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_13b72406627c1d11b87f068f332ac0d9 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_60157a767db25daf0df0febc7f0071ee = $(`<div id="html_60157a767db25daf0df0febc7f0071ee" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 230px;">         <h4 style="margin-bottom: 6px; color: #e10600;">🏎️ Emilia Romagna Grand Prix</h4>         <b>Circuit:</b> Autodromo Internazionale Enzo e Dino Ferrari<br>         <b>Country:</b> Italy<br>         <b>Region:</b> Europe<br>         <b>Track type:</b> Permanent     </div>     </div>`)[0];
+                popup_13b72406627c1d11b87f068f332ac0d9.setContent(html_60157a767db25daf0df0febc7f0071ee);
+            
+        
+
+        marker_f5aeb7d5cfdb8013721af16c330ee5c0.bindPopup(popup_13b72406627c1d11b87f068f332ac0d9)
+        ;
+
+        
+    
+    
+            marker_f5aeb7d5cfdb8013721af16c330ee5c0.bindTooltip(
+                `<div>
+                     Emilia Romagna Grand Prix — Autodromo Internazionale Enzo e Dino Ferrari
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f5aeb7d5cfdb8013721af16c330ee5c0.setIcon(icon_2492e46e39aa0c4567225f8db1ff11f9);
+            
+    
+            var marker_d841d5bfedcf241a80cb27ce314642ae = L.marker(
+                [1.2914, 103.864],
+                {
+}
+            ).addTo(marker_cluster_18b1e887a21a6969a1b2b214dea12b05);
+        
+    
+            var icon_66f4406896d5a732d6000911aa049915 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "flag-checkered",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fc822215b6428068a6cf97cd4d9c3273 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_cd7aad26cd5b87349d59aceece19f738 = $(`<div id="html_cd7aad26cd5b87349d59aceece19f738" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 230px;">         <h4 style="margin-bottom: 6px; color: #e10600;">🏎️ Singapore Grand Prix</h4>         <b>Circuit:</b> Marina Bay Street Circuit<br>         <b>Country:</b> Singapore<br>         <b>Region:</b> Asia / Middle East<br>         <b>Track type:</b> Street     </div>     </div>`)[0];
+                popup_fc822215b6428068a6cf97cd4d9c3273.setContent(html_cd7aad26cd5b87349d59aceece19f738);
+            
+        
+
+        marker_d841d5bfedcf241a80cb27ce314642ae.bindPopup(popup_fc822215b6428068a6cf97cd4d9c3273)
+        ;
+
+        
+    
+    
+            marker_d841d5bfedcf241a80cb27ce314642ae.bindTooltip(
+                `<div>
+                     Singapore Grand Prix — Marina Bay Street Circuit
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d841d5bfedcf241a80cb27ce314642ae.setIcon(icon_66f4406896d5a732d6000911aa049915);
+            
+    
+            var marker_bc832ff310dbe0a2dc2a145e2e4ae28b = L.marker(
+                [25.49, 51.4542],
+                {
+}
+            ).addTo(marker_cluster_18b1e887a21a6969a1b2b214dea12b05);
+        
+    
+            var icon_bb7825a7630b2e965293718440741135 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "flag-checkered",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_89ad8b504491cf514c03a72e06f206ac = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_1fe2cb9374d10eb9a7ff1f2cc5a4739f = $(`<div id="html_1fe2cb9374d10eb9a7ff1f2cc5a4739f" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 230px;">         <h4 style="margin-bottom: 6px; color: #e10600;">🏎️ Qatar Grand Prix</h4>         <b>Circuit:</b> Lusail International Circuit<br>         <b>Country:</b> Qatar<br>         <b>Region:</b> Asia / Middle East<br>         <b>Track type:</b> Permanent     </div>     </div>`)[0];
+                popup_89ad8b504491cf514c03a72e06f206ac.setContent(html_1fe2cb9374d10eb9a7ff1f2cc5a4739f);
+            
+        
+
+        marker_bc832ff310dbe0a2dc2a145e2e4ae28b.bindPopup(popup_89ad8b504491cf514c03a72e06f206ac)
+        ;
+
+        
+    
+    
+            marker_bc832ff310dbe0a2dc2a145e2e4ae28b.bindTooltip(
+                `<div>
+                     Qatar Grand Prix — Lusail International Circuit
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bc832ff310dbe0a2dc2a145e2e4ae28b.setIcon(icon_bb7825a7630b2e965293718440741135);
+            
+    
+            marker_cluster_18b1e887a21a6969a1b2b214dea12b05.addTo(map_95ee685db386f5555ecaffdad8f655a1);
+        
+</script>
+</html>

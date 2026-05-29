@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_d4d3758345e661d323c3b6454df44d93 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_d4d3758345e661d323c3b6454df44d93" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_d4d3758345e661d323c3b6454df44d93 = L.map(
+                "map_d4d3758345e661d323c3b6454df44d93",
+                {
+                    center: [20.0, 0.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_77ec4a114473742b256bf453b1362f13 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_77ec4a114473742b256bf453b1362f13.addTo(map_d4d3758345e661d323c3b6454df44d93);
+        
+    
+            var marker_48764169e7209cb932cca592947f9f68 = L.marker(
+                [45.5, -73.5228],
+                {
+}
+            ).addTo(map_d4d3758345e661d323c3b6454df44d93);
+        
+    
+            var icon_df4af37ed99fd9e0a79e085d56ce7096 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d37abd9479f23e97a12b59abbc308c43 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_26fab71c72475e66ea4bc398422f44c2 = $(`<div id="html_26fab71c72475e66ea4bc398422f44c2" style="width: 100.0%; height: 100.0%;">Canadian Grand Prix</div>`)[0];
+                popup_d37abd9479f23e97a12b59abbc308c43.setContent(html_26fab71c72475e66ea4bc398422f44c2);
+            
+        
+
+        marker_48764169e7209cb932cca592947f9f68.bindPopup(popup_d37abd9479f23e97a12b59abbc308c43)
+        ;
+
+        
+    
+    
+            marker_48764169e7209cb932cca592947f9f68.bindTooltip(
+                `<div>
+                     Canadian Grand Prix
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_48764169e7209cb932cca592947f9f68.setIcon(icon_df4af37ed99fd9e0a79e085d56ce7096);
+            
+    
+            var marker_ea92b6ffc04d1d9ea573af775c9775b3 = L.marker(
+                [52.3888, 4.5409],
+                {
+}
+            ).addTo(map_d4d3758345e661d323c3b6454df44d93);
+        
+    
+            var icon_32831e7d23b0b9460944b7dd20645593 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4d2d7ab711f1402bcdc2ed446accdf62 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7d9e9884666047e26d2162ff42c0f133 = $(`<div id="html_7d9e9884666047e26d2162ff42c0f133" style="width: 100.0%; height: 100.0%;">Dutch Grand Prix</div>`)[0];
+                popup_4d2d7ab711f1402bcdc2ed446accdf62.setContent(html_7d9e9884666047e26d2162ff42c0f133);
+            
+        
+
+        marker_ea92b6ffc04d1d9ea573af775c9775b3.bindPopup(popup_4d2d7ab711f1402bcdc2ed446accdf62)
+        ;
+
+        
+    
+    
+            marker_ea92b6ffc04d1d9ea573af775c9775b3.bindTooltip(
+                `<div>
+                     Dutch Grand Prix
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ea92b6ffc04d1d9ea573af775c9775b3.setIcon(icon_32831e7d23b0b9460944b7dd20645593);
+            
+    
+            var marker_86e1cfdcf3f54f23a9aefaa78d891136 = L.marker(
+                [47.2197, 14.7647],
+                {
+}
+            ).addTo(map_d4d3758345e661d323c3b6454df44d93);
+        
+    
+            var icon_8a82012508d39f48d033782dc6eaa76e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c3eff6d9d1c207ef090ea7ae6baedc80 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_438eb96feb372503af0935fc5db41a40 = $(`<div id="html_438eb96feb372503af0935fc5db41a40" style="width: 100.0%; height: 100.0%;">Austrian Grand Prix</div>`)[0];
+                popup_c3eff6d9d1c207ef090ea7ae6baedc80.setContent(html_438eb96feb372503af0935fc5db41a40);
+            
+        
+
+        marker_86e1cfdcf3f54f23a9aefaa78d891136.bindPopup(popup_c3eff6d9d1c207ef090ea7ae6baedc80)
+        ;
+
+        
+    
+    
+            marker_86e1cfdcf3f54f23a9aefaa78d891136.bindTooltip(
+                `<div>
+                     Austrian Grand Prix
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_86e1cfdcf3f54f23a9aefaa78d891136.setIcon(icon_8a82012508d39f48d033782dc6eaa76e);
+            
+    
+            var marker_96edd258fa4ddc7688b8e04b2bfad1d8 = L.marker(
+                [40.3725, 49.8533],
+                {
+}
+            ).addTo(map_d4d3758345e661d323c3b6454df44d93);
+        
+    
+            var icon_f2a8110b062f81e12ac1dc4b4da7c9a6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2bee37f32574d6959667a80b73f9c955 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4955984ef2e6cc5c46be5f7cd739f12e = $(`<div id="html_4955984ef2e6cc5c46be5f7cd739f12e" style="width: 100.0%; height: 100.0%;">Azerbaijan Grand Prix</div>`)[0];
+                popup_2bee37f32574d6959667a80b73f9c955.setContent(html_4955984ef2e6cc5c46be5f7cd739f12e);
+            
+        
+
+        marker_96edd258fa4ddc7688b8e04b2bfad1d8.bindPopup(popup_2bee37f32574d6959667a80b73f9c955)
+        ;
+
+        
+    
+    
+            marker_96edd258fa4ddc7688b8e04b2bfad1d8.bindTooltip(
+                `<div>
+                     Azerbaijan Grand Prix
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_96edd258fa4ddc7688b8e04b2bfad1d8.setIcon(icon_f2a8110b062f81e12ac1dc4b4da7c9a6);
+            
+    
+            var marker_660ef5e66a7085714114a65103c49f48 = L.marker(
+                [21.6319, 39.1044],
+                {
+}
+            ).addTo(map_d4d3758345e661d323c3b6454df44d93);
+        
+    
+            var icon_719f32bf2f60a4db1fadbf0e08fb24a9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_661529efca53751618d55be10203757c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c5b8ee8739b3192c901290ee1e1b8f67 = $(`<div id="html_c5b8ee8739b3192c901290ee1e1b8f67" style="width: 100.0%; height: 100.0%;">Saudi Arabian Grand Prix</div>`)[0];
+                popup_661529efca53751618d55be10203757c.setContent(html_c5b8ee8739b3192c901290ee1e1b8f67);
+            
+        
+
+        marker_660ef5e66a7085714114a65103c49f48.bindPopup(popup_661529efca53751618d55be10203757c)
+        ;
+
+        
+    
+    
+            marker_660ef5e66a7085714114a65103c49f48.bindTooltip(
+                `<div>
+                     Saudi Arabian Grand Prix
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_660ef5e66a7085714114a65103c49f48.setIcon(icon_719f32bf2f60a4db1fadbf0e08fb24a9);
+            
+    
+            var marker_1684f535b52f200818aa059073056d8a = L.marker(
+                [50.4372, 5.9714],
+                {
+}
+            ).addTo(map_d4d3758345e661d323c3b6454df44d93);
+        
+    
+            var icon_42e30f61849bca769a4095e5182ce52a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_44065d9fa72e1043053d3e44fdbad0ea = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c9e70a43913328d6adf4e353a3bfed5b = $(`<div id="html_c9e70a43913328d6adf4e353a3bfed5b" style="width: 100.0%; height: 100.0%;">Belgian Grand Prix</div>`)[0];
+                popup_44065d9fa72e1043053d3e44fdbad0ea.setContent(html_c9e70a43913328d6adf4e353a3bfed5b);
+            
+        
+
+        marker_1684f535b52f200818aa059073056d8a.bindPopup(popup_44065d9fa72e1043053d3e44fdbad0ea)
+        ;
+
+        
+    
+    
+            marker_1684f535b52f200818aa059073056d8a.bindTooltip(
+                `<div>
+                     Belgian Grand Prix
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1684f535b52f200818aa059073056d8a.setIcon(icon_42e30f61849bca769a4095e5182ce52a);
+            
+    
+            var marker_200fc18d484358f0b1ceeb8ea5cbd36d = L.marker(
+                [30.1328, -97.6411],
+                {
+}
+            ).addTo(map_d4d3758345e661d323c3b6454df44d93);
+        
+    
+            var icon_31a9bb5240a75e0af459776a3816a978 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cd07bba7210d0ec0629dd4dcb5f4b943 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_522540324fd69bdc5bbe6e78a578f10e = $(`<div id="html_522540324fd69bdc5bbe6e78a578f10e" style="width: 100.0%; height: 100.0%;">United States Grand Prix</div>`)[0];
+                popup_cd07bba7210d0ec0629dd4dcb5f4b943.setContent(html_522540324fd69bdc5bbe6e78a578f10e);
+            
+        
+
+        marker_200fc18d484358f0b1ceeb8ea5cbd36d.bindPopup(popup_cd07bba7210d0ec0629dd4dcb5f4b943)
+        ;
+
+        
+    
+    
+            marker_200fc18d484358f0b1ceeb8ea5cbd36d.bindTooltip(
+                `<div>
+                     United States Grand Prix
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_200fc18d484358f0b1ceeb8ea5cbd36d.setIcon(icon_31a9bb5240a75e0af459776a3816a978);
+            
+    
+            var marker_57f0035291c5a29af3d52179ab27160b = L.marker(
+                [45.6156, 9.2811],
+                {
+}
+            ).addTo(map_d4d3758345e661d323c3b6454df44d93);
+        
+    
+            var icon_b6e8fc3536128ce31c1310cebf603521 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2b4b8b15a1dd814482e5ad3ec066fffe = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9131c0215bfb5e9395a231178ec20a2d = $(`<div id="html_9131c0215bfb5e9395a231178ec20a2d" style="width: 100.0%; height: 100.0%;">Italian Grand Prix</div>`)[0];
+                popup_2b4b8b15a1dd814482e5ad3ec066fffe.setContent(html_9131c0215bfb5e9395a231178ec20a2d);
+            
+        
+
+        marker_57f0035291c5a29af3d52179ab27160b.bindPopup(popup_2b4b8b15a1dd814482e5ad3ec066fffe)
+        ;
+
+        
+    
+    
+            marker_57f0035291c5a29af3d52179ab27160b.bindTooltip(
+                `<div>
+                     Italian Grand Prix
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_57f0035291c5a29af3d52179ab27160b.setIcon(icon_b6e8fc3536128ce31c1310cebf603521);
+            
+    
+            var marker_40f17dc9f9547faa74c9a77e0a4767d4 = L.marker(
+                [47.5822, 19.2511],
+                {
+}
+            ).addTo(map_d4d3758345e661d323c3b6454df44d93);
+        
+    
+            var icon_0d7c4d4592f91387c797065c71c4c0e3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9d07ee502c5ee309fe06b81f68be3584 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8af58aa6a19fb36b520ec39b2dd8355e = $(`<div id="html_8af58aa6a19fb36b520ec39b2dd8355e" style="width: 100.0%; height: 100.0%;">Hungarian Grand Prix</div>`)[0];
+                popup_9d07ee502c5ee309fe06b81f68be3584.setContent(html_8af58aa6a19fb36b520ec39b2dd8355e);
+            
+        
+
+        marker_40f17dc9f9547faa74c9a77e0a4767d4.bindPopup(popup_9d07ee502c5ee309fe06b81f68be3584)
+        ;
+
+        
+    
+    
+            marker_40f17dc9f9547faa74c9a77e0a4767d4.bindTooltip(
+                `<div>
+                     Hungarian Grand Prix
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_40f17dc9f9547faa74c9a77e0a4767d4.setIcon(icon_0d7c4d4592f91387c797065c71c4c0e3);
+            
+    
+            var marker_f521f3498609233aa1bf87e44af08b0c = L.marker(
+                [34.8431, 136.541],
+                {
+}
+            ).addTo(map_d4d3758345e661d323c3b6454df44d93);
+        
+    
+            var icon_6562545343c3a68dfda7f83e307682c0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8342c30db9b240750a6214f91249d363 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bf25e2f726a7299a17464ce5aa3e71cd = $(`<div id="html_bf25e2f726a7299a17464ce5aa3e71cd" style="width: 100.0%; height: 100.0%;">Japanese Grand Prix</div>`)[0];
+                popup_8342c30db9b240750a6214f91249d363.setContent(html_bf25e2f726a7299a17464ce5aa3e71cd);
+            
+        
+
+        marker_f521f3498609233aa1bf87e44af08b0c.bindPopup(popup_8342c30db9b240750a6214f91249d363)
+        ;
+
+        
+    
+    
+            marker_f521f3498609233aa1bf87e44af08b0c.bindTooltip(
+                `<div>
+                     Japanese Grand Prix
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f521f3498609233aa1bf87e44af08b0c.setIcon(icon_6562545343c3a68dfda7f83e307682c0);
+            
+    
+            var marker_2aca7577130f744112d8828624e3ec7a = L.marker(
+                [-23.7036, -46.6997],
+                {
+}
+            ).addTo(map_d4d3758345e661d323c3b6454df44d93);
+        
+    
+            var icon_a8cac9a5b0519951a6cc5d286230ca87 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7cfff6b3cb1296d66d6a27aa03d4e359 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a2459634c33b713f3c11f09f3d6ac41a = $(`<div id="html_a2459634c33b713f3c11f09f3d6ac41a" style="width: 100.0%; height: 100.0%;">São Paulo Grand Prix</div>`)[0];
+                popup_7cfff6b3cb1296d66d6a27aa03d4e359.setContent(html_a2459634c33b713f3c11f09f3d6ac41a);
+            
+        
+
+        marker_2aca7577130f744112d8828624e3ec7a.bindPopup(popup_7cfff6b3cb1296d66d6a27aa03d4e359)
+        ;
+
+        
+    
+    
+            marker_2aca7577130f744112d8828624e3ec7a.bindTooltip(
+                `<div>
+                     São Paulo Grand Prix
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2aca7577130f744112d8828624e3ec7a.setIcon(icon_a8cac9a5b0519951a6cc5d286230ca87);
+            
+    
+            var marker_800677d207308ae9178cdd7b91045e4c = L.marker(
+                [26.0325, 50.5106],
+                {
+}
+            ).addTo(map_d4d3758345e661d323c3b6454df44d93);
+        
+    
+            var icon_20469170a2e3db275d8514756019109b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fd56c71a8c97b2f49467cfd93e9a3be8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b16175a3c89d27695396ad622d1eaeab = $(`<div id="html_b16175a3c89d27695396ad622d1eaeab" style="width: 100.0%; height: 100.0%;">Bahrain Grand Prix</div>`)[0];
+                popup_fd56c71a8c97b2f49467cfd93e9a3be8.setContent(html_b16175a3c89d27695396ad622d1eaeab);
+            
+        
+
+        marker_800677d207308ae9178cdd7b91045e4c.bindPopup(popup_fd56c71a8c97b2f49467cfd93e9a3be8)
+        ;
+
+        
+    
+    
+            marker_800677d207308ae9178cdd7b91045e4c.bindTooltip(
+                `<div>
+                     Bahrain Grand Prix
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_800677d207308ae9178cdd7b91045e4c.setIcon(icon_20469170a2e3db275d8514756019109b);
+            
+    
+            var marker_ceeb91e57c1371831543aedb967fe9c5 = L.marker(
+                [36.1147, -115.1739],
+                {
+}
+            ).addTo(map_d4d3758345e661d323c3b6454df44d93);
+        
+    
+            var icon_33f68c93849d4ad67793c75701cdff7e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_290e58c4c247dc5e1bd8edc314b0e607 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_19f25173eca2c13f58c8f9381658ce7f = $(`<div id="html_19f25173eca2c13f58c8f9381658ce7f" style="width: 100.0%; height: 100.0%;">Las Vegas Grand Prix</div>`)[0];
+                popup_290e58c4c247dc5e1bd8edc314b0e607.setContent(html_19f25173eca2c13f58c8f9381658ce7f);
+            
+        
+
+        marker_ceeb91e57c1371831543aedb967fe9c5.bindPopup(popup_290e58c4c247dc5e1bd8edc314b0e607)
+        ;
+
+        
+    
+    
+            marker_ceeb91e57c1371831543aedb967fe9c5.bindTooltip(
+                `<div>
+                     Las Vegas Grand Prix
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ceeb91e57c1371831543aedb967fe9c5.setIcon(icon_33f68c93849d4ad67793c75701cdff7e);
+            
+    
+            var marker_a9884b1fe0a9dca77cbc6e4ad41a2d3b = L.marker(
+                [43.7347, 7.4206],
+                {
+}
+            ).addTo(map_d4d3758345e661d323c3b6454df44d93);
+        
+    
+            var icon_c4f4aeebeeaf3373579d5e2f678959f6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_028f3613444293dffdc440e5f0872b38 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8b927f971cf909d1efd812a12e39540b = $(`<div id="html_8b927f971cf909d1efd812a12e39540b" style="width: 100.0%; height: 100.0%;">Monaco Grand Prix</div>`)[0];
+                popup_028f3613444293dffdc440e5f0872b38.setContent(html_8b927f971cf909d1efd812a12e39540b);
+            
+        
+
+        marker_a9884b1fe0a9dca77cbc6e4ad41a2d3b.bindPopup(popup_028f3613444293dffdc440e5f0872b38)
+        ;
+
+        
+    
+    
+            marker_a9884b1fe0a9dca77cbc6e4ad41a2d3b.bindTooltip(
+                `<div>
+                     Monaco Grand Prix
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a9884b1fe0a9dca77cbc6e4ad41a2d3b.setIcon(icon_c4f4aeebeeaf3373579d5e2f678959f6);
+            
+    
+            var marker_eda688e08753153af9d4b7d4b60d9f8e = L.marker(
+                [52.0733, -1.0147],
+                {
+}
+            ).addTo(map_d4d3758345e661d323c3b6454df44d93);
+        
+    
+            var icon_ccdb5065bde2ede0e28702a86e31b0ea = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_67a9c42d9de14e9e8965fd61b1792fe1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9e2a93eb562d821fa42fea28f23d5465 = $(`<div id="html_9e2a93eb562d821fa42fea28f23d5465" style="width: 100.0%; height: 100.0%;">British Grand Prix</div>`)[0];
+                popup_67a9c42d9de14e9e8965fd61b1792fe1.setContent(html_9e2a93eb562d821fa42fea28f23d5465);
+            
+        
+
+        marker_eda688e08753153af9d4b7d4b60d9f8e.bindPopup(popup_67a9c42d9de14e9e8965fd61b1792fe1)
+        ;
+
+        
+    
+    
+            marker_eda688e08753153af9d4b7d4b60d9f8e.bindTooltip(
+                `<div>
+                     British Grand Prix
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_eda688e08753153af9d4b7d4b60d9f8e.setIcon(icon_ccdb5065bde2ede0e28702a86e31b0ea);
+            
+    
+            var marker_9842bf0a164cc7c8d386488e115c0795 = L.marker(
+                [-37.8497, 144.968],
+                {
+}
+            ).addTo(map_d4d3758345e661d323c3b6454df44d93);
+        
+    
+            var icon_63984245a89506105075a006eaf4e2ad = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8e1341d0d6fc90cefe5b193d6da98255 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6a66b65a8f6f34fce63026d91b7f861a = $(`<div id="html_6a66b65a8f6f34fce63026d91b7f861a" style="width: 100.0%; height: 100.0%;">Australian Grand Prix</div>`)[0];
+                popup_8e1341d0d6fc90cefe5b193d6da98255.setContent(html_6a66b65a8f6f34fce63026d91b7f861a);
+            
+        
+
+        marker_9842bf0a164cc7c8d386488e115c0795.bindPopup(popup_8e1341d0d6fc90cefe5b193d6da98255)
+        ;
+
+        
+    
+    
+            marker_9842bf0a164cc7c8d386488e115c0795.bindTooltip(
+                `<div>
+                     Australian Grand Prix
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9842bf0a164cc7c8d386488e115c0795.setIcon(icon_63984245a89506105075a006eaf4e2ad);
+            
+    
+            var marker_549b419dd04f7c0b713fd8dc1b136bc8 = L.marker(
+                [41.57, 2.2611],
+                {
+}
+            ).addTo(map_d4d3758345e661d323c3b6454df44d93);
+        
+    
+            var icon_1b02529bfbdcfe8c1174a9812665c321 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_dca7e439f5c2a7373f09793055838d84 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_aac805e649fab3e10446560501376552 = $(`<div id="html_aac805e649fab3e10446560501376552" style="width: 100.0%; height: 100.0%;">Spanish Grand Prix</div>`)[0];
+                popup_dca7e439f5c2a7373f09793055838d84.setContent(html_aac805e649fab3e10446560501376552);
+            
+        
+
+        marker_549b419dd04f7c0b713fd8dc1b136bc8.bindPopup(popup_dca7e439f5c2a7373f09793055838d84)
+        ;
+
+        
+    
+    
+            marker_549b419dd04f7c0b713fd8dc1b136bc8.bindTooltip(
+                `<div>
+                     Spanish Grand Prix
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_549b419dd04f7c0b713fd8dc1b136bc8.setIcon(icon_1b02529bfbdcfe8c1174a9812665c321);
+            
+    
+            var marker_cf924cd7a3d6c540f312cb84138249fd = L.marker(
+                [25.9581, -80.2389],
+                {
+}
+            ).addTo(map_d4d3758345e661d323c3b6454df44d93);
+        
+    
+            var icon_6e5e9147bd90cfa4823b1c09d435b7d3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_306aaefbd4eee2ba45de653bf2ecc78a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_63211f4ee5787c526385f3a983891187 = $(`<div id="html_63211f4ee5787c526385f3a983891187" style="width: 100.0%; height: 100.0%;">Miami Grand Prix</div>`)[0];
+                popup_306aaefbd4eee2ba45de653bf2ecc78a.setContent(html_63211f4ee5787c526385f3a983891187);
+            
+        
+
+        marker_cf924cd7a3d6c540f312cb84138249fd.bindPopup(popup_306aaefbd4eee2ba45de653bf2ecc78a)
+        ;
+
+        
+    
+    
+            marker_cf924cd7a3d6c540f312cb84138249fd.bindTooltip(
+                `<div>
+                     Miami Grand Prix
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_cf924cd7a3d6c540f312cb84138249fd.setIcon(icon_6e5e9147bd90cfa4823b1c09d435b7d3);
+            
+    
+            var marker_1d481459b1046ef698bf1dfe87991cf6 = L.marker(
+                [43.2506, 5.7917],
+                {
+}
+            ).addTo(map_d4d3758345e661d323c3b6454df44d93);
+        
+    
+            var icon_67428bf7ff575256b7f3e5e5b5111d9a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e9459fa0a21398ad51d3d539c7f9f830 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fb20bc2c2e7d0f2b906dbefada3c8e24 = $(`<div id="html_fb20bc2c2e7d0f2b906dbefada3c8e24" style="width: 100.0%; height: 100.0%;">French Grand Prix</div>`)[0];
+                popup_e9459fa0a21398ad51d3d539c7f9f830.setContent(html_fb20bc2c2e7d0f2b906dbefada3c8e24);
+            
+        
+
+        marker_1d481459b1046ef698bf1dfe87991cf6.bindPopup(popup_e9459fa0a21398ad51d3d539c7f9f830)
+        ;
+
+        
+    
+    
+            marker_1d481459b1046ef698bf1dfe87991cf6.bindTooltip(
+                `<div>
+                     French Grand Prix
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1d481459b1046ef698bf1dfe87991cf6.setIcon(icon_67428bf7ff575256b7f3e5e5b5111d9a);
+            
+    
+            var marker_e177ee73b9ba4ee091f0c0e9908b886e = L.marker(
+                [24.4672, 54.6031],
+                {
+}
+            ).addTo(map_d4d3758345e661d323c3b6454df44d93);
+        
+    
+            var icon_e31bfa2697ddc4bd5c72429e26e3dcf4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0b7eb0e8507d9efaa6b24c84725b62c3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_80087e3f40c70b47168f4d401a5094cf = $(`<div id="html_80087e3f40c70b47168f4d401a5094cf" style="width: 100.0%; height: 100.0%;">Abu Dhabi Grand Prix</div>`)[0];
+                popup_0b7eb0e8507d9efaa6b24c84725b62c3.setContent(html_80087e3f40c70b47168f4d401a5094cf);
+            
+        
+
+        marker_e177ee73b9ba4ee091f0c0e9908b886e.bindPopup(popup_0b7eb0e8507d9efaa6b24c84725b62c3)
+        ;
+
+        
+    
+    
+            marker_e177ee73b9ba4ee091f0c0e9908b886e.bindTooltip(
+                `<div>
+                     Abu Dhabi Grand Prix
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e177ee73b9ba4ee091f0c0e9908b886e.setIcon(icon_e31bfa2697ddc4bd5c72429e26e3dcf4);
+            
+    
+            var marker_168ba7ed05c446e2be4a2508bac50dc7 = L.marker(
+                [31.3389, 121.2197],
+                {
+}
+            ).addTo(map_d4d3758345e661d323c3b6454df44d93);
+        
+    
+            var icon_6259982ae13a314250a9a2bff7a1d03a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a6f792185ee2094b65024609638bb325 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_31d08649026361c5f25fa0259990bba6 = $(`<div id="html_31d08649026361c5f25fa0259990bba6" style="width: 100.0%; height: 100.0%;">Chinese Grand Prix</div>`)[0];
+                popup_a6f792185ee2094b65024609638bb325.setContent(html_31d08649026361c5f25fa0259990bba6);
+            
+        
+
+        marker_168ba7ed05c446e2be4a2508bac50dc7.bindPopup(popup_a6f792185ee2094b65024609638bb325)
+        ;
+
+        
+    
+    
+            marker_168ba7ed05c446e2be4a2508bac50dc7.bindTooltip(
+                `<div>
+                     Chinese Grand Prix
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_168ba7ed05c446e2be4a2508bac50dc7.setIcon(icon_6259982ae13a314250a9a2bff7a1d03a);
+            
+    
+            var marker_d0877dc0fbf05f637028bbde0ef5fec5 = L.marker(
+                [19.4042, -99.0907],
+                {
+}
+            ).addTo(map_d4d3758345e661d323c3b6454df44d93);
+        
+    
+            var icon_1508f0cf665ae34c4c1acab0b285459f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_215bb58ff8eb11f9c551e76d8c90a160 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8739e457bd92cf3b3ddafe8a66e9e162 = $(`<div id="html_8739e457bd92cf3b3ddafe8a66e9e162" style="width: 100.0%; height: 100.0%;">Mexico City Grand Prix</div>`)[0];
+                popup_215bb58ff8eb11f9c551e76d8c90a160.setContent(html_8739e457bd92cf3b3ddafe8a66e9e162);
+            
+        
+
+        marker_d0877dc0fbf05f637028bbde0ef5fec5.bindPopup(popup_215bb58ff8eb11f9c551e76d8c90a160)
+        ;
+
+        
+    
+    
+            marker_d0877dc0fbf05f637028bbde0ef5fec5.bindTooltip(
+                `<div>
+                     Mexico City Grand Prix
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d0877dc0fbf05f637028bbde0ef5fec5.setIcon(icon_1508f0cf665ae34c4c1acab0b285459f);
+            
+    
+            var marker_06e52cecb14045ec229a5061371da3fb = L.marker(
+                [44.3439, 11.7167],
+                {
+}
+            ).addTo(map_d4d3758345e661d323c3b6454df44d93);
+        
+    
+            var icon_c21ec81ac3908bfc579fcfb30a8a4dc8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b8df2808acbdc4f2245e6ebde1affdb1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0e0299c610a126f4047ebcf1c73297ff = $(`<div id="html_0e0299c610a126f4047ebcf1c73297ff" style="width: 100.0%; height: 100.0%;">Emilia Romagna Grand Prix</div>`)[0];
+                popup_b8df2808acbdc4f2245e6ebde1affdb1.setContent(html_0e0299c610a126f4047ebcf1c73297ff);
+            
+        
+
+        marker_06e52cecb14045ec229a5061371da3fb.bindPopup(popup_b8df2808acbdc4f2245e6ebde1affdb1)
+        ;
+
+        
+    
+    
+            marker_06e52cecb14045ec229a5061371da3fb.bindTooltip(
+                `<div>
+                     Emilia Romagna Grand Prix
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_06e52cecb14045ec229a5061371da3fb.setIcon(icon_c21ec81ac3908bfc579fcfb30a8a4dc8);
+            
+    
+            var marker_cc6738a2e2c52a66e9eaa39b9b2a6581 = L.marker(
+                [1.2914, 103.864],
+                {
+}
+            ).addTo(map_d4d3758345e661d323c3b6454df44d93);
+        
+    
+            var icon_13f716990194c288d6ba722bc3e22fb6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e4d8632784dc9286a45dd39d0a0a6058 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_467d9867f2ae64c216fc95c6d55e7a8b = $(`<div id="html_467d9867f2ae64c216fc95c6d55e7a8b" style="width: 100.0%; height: 100.0%;">Singapore Grand Prix</div>`)[0];
+                popup_e4d8632784dc9286a45dd39d0a0a6058.setContent(html_467d9867f2ae64c216fc95c6d55e7a8b);
+            
+        
+
+        marker_cc6738a2e2c52a66e9eaa39b9b2a6581.bindPopup(popup_e4d8632784dc9286a45dd39d0a0a6058)
+        ;
+
+        
+    
+    
+            marker_cc6738a2e2c52a66e9eaa39b9b2a6581.bindTooltip(
+                `<div>
+                     Singapore Grand Prix
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_cc6738a2e2c52a66e9eaa39b9b2a6581.setIcon(icon_13f716990194c288d6ba722bc3e22fb6);
+            
+    
+            var marker_02c92bf33865603c6087f5bd0a6fd585 = L.marker(
+                [25.49, 51.4542],
+                {
+}
+            ).addTo(map_d4d3758345e661d323c3b6454df44d93);
+        
+    
+            var icon_c870466753f2f985f00eae52e0a73b15 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4cdb045591f974d674e37775bbde195f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ccd015e3d510cd14de3963d7d7f002f5 = $(`<div id="html_ccd015e3d510cd14de3963d7d7f002f5" style="width: 100.0%; height: 100.0%;">Qatar Grand Prix</div>`)[0];
+                popup_4cdb045591f974d674e37775bbde195f.setContent(html_ccd015e3d510cd14de3963d7d7f002f5);
+            
+        
+
+        marker_02c92bf33865603c6087f5bd0a6fd585.bindPopup(popup_4cdb045591f974d674e37775bbde195f)
+        ;
+
+        
+    
+    
+            marker_02c92bf33865603c6087f5bd0a6fd585.bindTooltip(
+                `<div>
+                     Qatar Grand Prix
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_02c92bf33865603c6087f5bd0a6fd585.setIcon(icon_c870466753f2f985f00eae52e0a73b15);
+            
+</script>
+</html>
